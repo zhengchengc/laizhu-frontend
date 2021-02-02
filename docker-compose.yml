@@ -1,0 +1,10 @@
+version: '0.1'
+
+services:
+  laizhu-frontend-prod:
+    container_name: laizhu-frontend-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - '8877:80'
