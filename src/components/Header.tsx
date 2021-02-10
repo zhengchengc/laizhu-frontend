@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header(props) {
+export default function Header(props:any) {
   const classes = useStyles();
   const { sections, title } = props;
 
@@ -51,7 +51,7 @@ export default function Header(props) {
         </Button>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-        {sections.map((section) => (
+        {sections && sections.map((section:any) => (
           <Link
             color="inherit"
             noWrap

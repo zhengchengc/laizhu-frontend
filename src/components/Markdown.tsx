@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-const styles = (theme) => ({
+const styles = (theme:any) => ({
   listItem: {
     marginTop: theme.spacing(1),
   },
@@ -28,15 +28,15 @@ const options = {
     p: { component: Typography, props: { paragraph: true } },
     a: { component: Link },
     li: {
-      component: withStyles(styles)(({ classes, ...props }) => (
+      component: withStyles(styles)<theme>(({ classes }) => (
         <li className={classes.listItem}>
-          <Typography component="span" {...props} />
+          <Typography component="span" />
         </li>
       )),
     },
   },
 };
 
-export default function Markdown(props) {
-  return <ReactMarkdown options={options} {...props} />;
-}
+export default function Markdown() {
+  return <ReactMarkdown options={options} />;
+};
